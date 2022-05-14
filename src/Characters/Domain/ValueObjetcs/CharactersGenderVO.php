@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-final class CharactersNameVO
+final class CharactersGenderVO
 {
     public function __construct(
         private string $name

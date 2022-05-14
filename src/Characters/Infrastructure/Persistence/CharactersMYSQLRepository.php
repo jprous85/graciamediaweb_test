@@ -5,28 +5,31 @@ declare(strict_types=1);
 namespace App\Characters\Infrastructure\Persistence;
 
 
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
+
 use CharactersGenderVO;
 use CharactersHeightVO;
 use CharactersIdVO;
 use CharactersMassVO;
 use CharactersNameVO;
 use CharactersPictureVO;
-use Doctrine\Persistence\ObjectManager;
 use SharedCratedAtVO;
 use SharedUpdatedAtVO;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
 
-final class CharactersMYSQLRespository implements CharactersInterface
+final class CharactersMYSQLRepository extends AbstractController implements CharactersInterface
 {
-    private ManagerRegistry $entity_manager;
+    private ObjectManager $entity_manager;
 
     public function __construct(
-        ManagerRegistry $doctrine
+        EntityManagerInterface $doctrine
     )
     {
-        $this->entity_manager = $doctrine->getManager();
+        $this->entity_manager = $doctrine;
     }
 
     public function showAll(): array

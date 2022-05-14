@@ -3,15 +3,15 @@
 declare(strict_types=1);
 
 
-final class CharactersMassVO
+final class CharactersHeightVO
 {
     public function __construct(
-        private ?int $mass
+        private ?int $height
     )
     {}
 
     public function value(): ?int
     {
-        return $this->mass;
+        return $this->height;
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
-namespace App\User\Domain;
+namespace App\Characters\Domain;
 
 
-interface UserInterface
+use CharactersIdVO;
+
+interface CharactersInterface
 {
     public function showAll();
 
-    public function Show();
+    public function Show(CharactersIdVO $id_vo): Characters|null;
+
+    public function save(Characters $character);
 }

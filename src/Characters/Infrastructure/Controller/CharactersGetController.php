@@ -1,25 +1,27 @@
 <?php
 
-namespace App\User\Infrastructure\Controller;
+namespace App\Characters\Infrastructure\Controller;
 
-use App\User\Application\UseCases\ShowUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-final class UserGetController extends AbstractController
+use App\Characters\Application\UseCases\ShowCharacters;
+
+final class CharactersGetController extends AbstractController
 {
     public function __construct(
-        private ShowUser $show_user
+        private ShowCharacters $show_user
     )
     {
     }
 
     /**
-     * @Route("/user", name="user", methods={"GET"})
+     * @Route("/character", methods={"GET"})
      */
-    public function showUser(): JsonResponse
+    public function showCharacter(int $id): JsonResponse
     {
-        return new JsonResponse(($this->show_user)(), 200);
+        $
+        return new JsonResponse(($this->showCharacter())(), 200);
     }
 }

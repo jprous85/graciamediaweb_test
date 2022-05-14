@@ -3,14 +3,15 @@
 declare(strict_types=1);
 
 
-final class CharactersIdVO
+final class CharacterIdRequest
 {
     public function __construct(
-        private ?int $id
+        private int $id
     )
-    {}
+    {
+    }
 
-    public function value(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
