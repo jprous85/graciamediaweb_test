@@ -53,19 +53,19 @@ final class CharactersMYSQLRepository extends AbstractController implements Char
 
     public function save(Characters $character)
     {
-        $character = new CharactersORMEntity();
-        $character->setParameters(
+        $character_entity = new CharactersORMEntity();
+        $character_entity->setParameters(
             null,
-            $character->getName(),
-            $character->getMass(),
-            $character->getHeight(),
-            $character->getGender(),
-            $character->getPicture(),
+            $character->getName()->value(),
+            $character->getMass()->value(),
+            $character->getHeight()->value(),
+            $character->getGender()->value(),
+            null,
             null,
             null
         );
 
-        $this->entity_manager->persist($character);
+        $this->entity_manager->persist($character_entity);
         $this->entity_manager->flush();
     }
 

@@ -49,12 +49,12 @@ class CharactersORMEntity
     /**
      * @ORM\Column(type="datetime")
      */
-    private ?string $created_at;
+    private ?\DateTime $created_at;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private ?string $updated_at;
+    private ?\DateTime $updated_at;
 
     public function setParameters(
         ?int    $id,
@@ -62,7 +62,7 @@ class CharactersORMEntity
         int    $mass,
         int    $height,
         string $gender,
-        string $picture,
+        ?string $picture,
         ?string $created_at,
         ?string $updated_at,
     )
@@ -73,75 +73,9 @@ class CharactersORMEntity
         $this->height = $height;
         $this->gender = $gender;
         $this->picture = $picture;
-        $this->created_at = $created_at;
+        $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"));
         $this->updated_at = $updated_at;
     }
-
-    /**
-     * @param int|null $id
-     */
-    public function setId(?int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @param int|null $mass
-     */
-    public function setMass(?int $mass): void
-    {
-        $this->mass = $mass;
-    }
-
-    /**
-     * @param int|null $height
-     */
-    public function setHeight(?int $height): void
-    {
-        $this->height = $height;
-    }
-
-    /**
-     * @param string|null $gender
-     */
-    public function setGender(?string $gender): void
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * @param string|null $picture
-     */
-    public function setPicture(?string $picture): void
-    {
-        $this->picture = $picture;
-    }
-
-    /**
-     * @param string|null $created_at
-     */
-    public function setCreatedAt(?string $created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
-    /**
-     * @param string|null $updated_at
-     */
-    public function setUpdatedAt(?string $updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-
 
     /**
      * @return int|null
@@ -192,17 +126,17 @@ class CharactersORMEntity
     }
 
     /**
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getCreatedAt(): ?string
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->created_at;
     }
 
     /**
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getUpdatedAt(): ?string
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updated_at;
     }
