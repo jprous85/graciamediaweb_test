@@ -6,13 +6,13 @@ declare(strict_types=1);
 final class CharactersPictureVO
 {
     public function __construct(
-        private string $name
+        private ?string $picture
     )
     {
     }
 
-    public function value(): string
+    public function value(): ?string
     {
-        return $this->name;
+        return $this->picture;
     }
 }

@@ -78,6 +78,72 @@ class CharactersORMEntity
     }
 
     /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param int|null $mass
+     */
+    public function setMass(?int $mass): void
+    {
+        $this->mass = $mass;
+    }
+
+    /**
+     * @param int|null $height
+     */
+    public function setHeight(?int $height): void
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @param string|null $gender
+     */
+    public function setGender(?string $gender): void
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * @param string|null $picture
+     */
+    public function setPicture(?string $picture): void
+    {
+        $this->picture = $picture;
+    }
+
+    /**
+     * @param string|null $created_at
+     */
+    public function setCreatedAt(?string $created_at): void
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @param string|null $updated_at
+     */
+    public function setUpdatedAt(?string $updated_at): void
+    {
+        $this->updated_at = $updated_at;
+    }
+
+
+
+    /**
      * @return int|null
      */
     public function getId(): ?int

@@ -53,9 +53,9 @@ final class GetStarWarsApi extends Command
         foreach ($content['results'] as $result) {
             $character_request = new CharactersRequest(
                 null,
-                (int) $result['name'],
+                $result['name'],
                 (int) $result['mass'],
-                $result['height'],
+                (int) $result['height'],
                 $result['gender'],
                 null,
                 null,
