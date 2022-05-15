@@ -20,5 +20,41 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Characters\:
+        resource: '../src/Characters/'
+        exclude:
+            - '../src/Characters/Application/Request/'
+            - '../src/Characters/Application/Response/'
+            - '../src/Characters/Application/UseCases/'
+            - '../src/Characters/Domain/ValueObjetcs/'
+            - '../src/Characters/Infrastructure/Controller/'
+            - '../src/Characters/Infrastructure/Persistence/'
+        arguments:
+            $id: "%id%"
+            $name: '%name%'
+            $mass: '%mass%'
+            $gender: "%gender%"
+            $height: "%height%"
+            $picture: "%picture%"
+
+    App\Movies\:
+        resource: '../src/Movies/'
+        exclude:
+            - '../src/Movies/Application/Request/'
+            - '../src/Movies/Application/Response/'
+            - '../src/Movies/Application/UseCases/'
+            - '../src/Movies/Domain/ValueObjects/'
+            - '../src/Movies/Infrastructure/Controller/'
+            - '../src/Movies/Infrastructure/Persistence/'
+        arguments:
+            $id: "%id%"
+            $name: '%name%'
+
+    App\Shared\:
+        resource: '../src/Shared/'
+        arguments: ["@service_container"]
+
+
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

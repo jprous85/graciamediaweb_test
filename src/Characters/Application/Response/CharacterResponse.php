@@ -12,7 +12,7 @@ final class CharacterResponse
         private int     $mass,
         private int     $height,
         private string  $gender,
-        private string  $picture,
+        private ?string  $picture,
         private string  $created_at,
         private ?string $updated_at,
     )

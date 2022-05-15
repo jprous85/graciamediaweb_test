@@ -7,13 +7,13 @@ namespace App\Characters\Domain\ValueObjetcs;
 final class CharactersGenderVO
 {
     public function __construct(
-        private string $name
+        private string $gender
     )
     {
     }
 
     public function value(): string
     {
-        return $this->name;
+        return $this->gender;
     }
 }

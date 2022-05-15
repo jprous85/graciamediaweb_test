@@ -69,17 +69,17 @@ final class CharactersMYSQLRepository extends AbstractController implements Char
         $this->entity_manager->flush();
     }
 
-    public static function mapping($request)
+    public static function mapping(CharactersORMEntity $request)
     {
         return $request ? new Characters(
-            new CharactersIdVO($request->id),
-            new CharactersNameVO($request->name),
-            new CharactersMassVO($request->mass),
-            new CharactersHeightVO($request->height),
-            new CharactersGenderVO($request->gender),
-            new CharactersPictureVO($request->picture),
-            new SharedCratedAtVO($request->created_at),
-            new SharedUpdatedAtVO($request->updated_at ?? null)
+            new CharactersIdVO($request->getId()),
+            new CharactersNameVO($request->getName()),
+            new CharactersMassVO($request->getMass()),
+            new CharactersHeightVO($request->getHeight()),
+            new CharactersGenderVO($request->getGender()),
+            new CharactersPictureVO($request->getPicture()),
+            new SharedCratedAtVO($request->getCreatedAt()?->format('Y-m-d h:i')),
+            new SharedUpdatedAtVO($request->getUpdatedAt()?->format('Y-m-d h:i'))
         ) : null;
     }
 }
