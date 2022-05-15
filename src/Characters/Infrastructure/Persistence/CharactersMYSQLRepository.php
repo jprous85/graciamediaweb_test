@@ -5,6 +5,14 @@ declare(strict_types=1);
 namespace App\Characters\Infrastructure\Persistence;
 
 
+use App\Characters\Domain\ValueObjetcs\CharactersGenderVO;
+use App\Characters\Domain\ValueObjetcs\CharactersHeightVO;
+use App\Characters\Domain\ValueObjetcs\CharactersIdVO;
+use App\Characters\Domain\ValueObjetcs\CharactersMassVO;
+use App\Characters\Domain\ValueObjetcs\CharactersNameVO;
+use App\Characters\Domain\ValueObjetcs\CharactersPictureVO;
+use App\Shared\Domain\ValueObjects\SharedCratedAtVO;
+use App\Shared\Domain\ValueObjects\SharedUpdatedAtVO;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,14 +20,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
 
-use CharactersGenderVO;
-use CharactersHeightVO;
-use CharactersIdVO;
-use CharactersMassVO;
-use CharactersNameVO;
-use CharactersPictureVO;
-use SharedCratedAtVO;
-use SharedUpdatedAtVO;
 
 final class CharactersMYSQLRepository extends AbstractController implements CharactersInterface
 {

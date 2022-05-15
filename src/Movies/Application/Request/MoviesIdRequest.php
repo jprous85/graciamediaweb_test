@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+namespace App\Movies\Application\Request;
 
 final class MoviesIdRequest
 {

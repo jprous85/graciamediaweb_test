@@ -6,10 +6,11 @@ declare(strict_types=1);
 namespace App\Movies\Application\UseCases;
 
 
+use App\Movies\Application\Request\MoviesRequest;
 use App\Movies\Domain\Movies;
 use App\Movies\Domain\MoviesInterface;
 use App\Movies\Domain\ValueObjects\MoviesNameVO;
-use MoviesRequest;
+
 
 final class CreateMovies
 {

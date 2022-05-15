@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Movies\Application\UseCases;
 
+use App\Movies\Application\Request\MoviesIdRequest;
+use App\Movies\Application\Response\MoviesResponse;
 use App\Movies\Domain\Movies;
 use App\Movies\Domain\MoviesInterface;
 use App\Movies\Domain\ValueObjects\MoviesIdVO;
-use MoviesIdRequest;
-use MoviesResponse;
+
 
 final class ShowMovies
 {

@@ -6,14 +6,15 @@ declare(strict_types=1);
 namespace App\Characters\Application\UseCases;
 
 
+use App\Characters\Application\Request\CharactersRequest;
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
-use CharactersGenderVO;
-use CharactersHeightVO;
-use CharactersMassVO;
-use CharactersNameVO;
-use CharactersPictureVO;
-use CharactersRequest;
+use App\Characters\Domain\ValueObjetcs\CharactersGenderVO;
+use App\Characters\Domain\ValueObjetcs\CharactersHeightVO;
+use App\Characters\Domain\ValueObjetcs\CharactersMassVO;
+use App\Characters\Domain\ValueObjetcs\CharactersNameVO;
+use App\Characters\Domain\ValueObjetcs\CharactersPictureVO;
+
 
 final class CreateCharacters
 {

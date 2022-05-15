@@ -10,10 +10,11 @@ use App\Movies\Domain\Movies;
 use App\Movies\Domain\MoviesInterface;
 use App\Movies\Domain\ValueObjects\MoviesIdVO;
 use App\Movies\Domain\ValueObjects\MoviesNameVO;
+use App\Shared\Domain\ValueObjects\SharedCratedAtVO;
+use App\Shared\Domain\ValueObjects\SharedUpdatedAtVO;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
-use SharedCratedAtVO;
-use SharedUpdatedAtVO;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class MoviesMYSQLRepository extends AbstractController implements MoviesInterface

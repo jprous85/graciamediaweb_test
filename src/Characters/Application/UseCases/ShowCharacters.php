@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Characters\Application\UseCases;
 
+use App\Characters\Application\Request\CharacterIdRequest;
+use App\Characters\Application\Response\CharacterResponse;
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
-use CharacterIdRequest;
-use CharacterResponse;
-use CharactersIdVO;
+use App\Characters\Domain\ValueObjetcs\CharactersIdVO;
+
 
 final class ShowCharacters
 {

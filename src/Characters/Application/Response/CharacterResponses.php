@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\Characters\Application\Response;
+
 
 final class CharacterResponses
 {

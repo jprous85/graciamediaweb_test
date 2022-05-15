@@ -3,7 +3,7 @@
 namespace App\Characters\Domain;
 
 
-use CharactersIdVO;
+use App\Characters\Domain\ValueObjetcs\CharactersIdVO;
 
 interface CharactersInterface
 {

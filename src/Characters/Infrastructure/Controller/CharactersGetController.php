@@ -2,7 +2,7 @@
 
 namespace App\Characters\Infrastructure\Controller;
 
-use CharacterIdRequest;
+use App\Characters\Application\Request\CharacterIdRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,11 +18,11 @@ final class CharactersGetController extends AbstractController
     }
 
     /**
-     * @Route("/character", methods={"GET"})
+     * @Route("/character/{id}", methods={"GET"})
      */
     public function showCharacter(int $id): JsonResponse
     {
         $id_request = new CharacterIdRequest($id);
-        return new JsonResponse(($this->show_character)($id_request)(), 200);
+        return new JsonResponse(($this->show_character)($id_request), 200);
     }
 }

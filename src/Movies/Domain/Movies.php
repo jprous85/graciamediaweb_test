@@ -7,8 +7,9 @@ namespace App\Movies\Domain;
 
 use App\Movies\Domain\ValueObjects\MoviesIdVO;
 use App\Movies\Domain\ValueObjects\MoviesNameVO;
-use SharedCratedAtVO;
-use SharedUpdatedAtVO;
+use App\Shared\Domain\ValueObjects\SharedCratedAtVO;
+use App\Shared\Domain\ValueObjects\SharedUpdatedAtVO;
+
 
 final class Movies
 {

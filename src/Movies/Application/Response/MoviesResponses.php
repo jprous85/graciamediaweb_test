@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+namespace App\Movies\Application\Response;
+
+use App\Characters\Application\Response\CharacterResponse;
 
 final class MoviesResponses
 {
