@@ -7,8 +7,8 @@ namespace App\Movies\Application\Request;
 final class MoviesRequest
 {
     public function __construct(
-        private ?int $id,
-        private string $name,
+        private ?int    $id,
+        private string  $name,
         private ?string $created_at,
         private ?string $updated_at,
     )

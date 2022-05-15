@@ -7,6 +7,7 @@ namespace App\Characters\Application\UseCases;
 
 
 use App\Characters\Application\Request\CharactersRequest;
+
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
 use App\Characters\Domain\ValueObjetcs\CharactersGenderVO;

@@ -6,9 +6,7 @@ namespace App\Shared\Domain\ValueObjects;
 
 final class SharedUpdatedAtVO
 {
-    public function __construct(
-        private ?string $updated_at
-    )
+    public function __construct(private ?string $updated_at)
     {
     }
 

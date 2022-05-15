@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace App\Movies\Application\Response;
 
-use App\Characters\Application\Response\CharacterResponse;
-
 final class MoviesResponses
 {
     private array $movies_responses;
 
-    public function __construct(CharacterResponse ...$movies_responses)
+    public function __construct(MoviesResponse ...$movies_responses)
     {
         $this->movies_responses = $movies_responses;
     }

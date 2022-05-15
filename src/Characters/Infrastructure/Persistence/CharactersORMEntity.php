@@ -58,21 +58,21 @@ class CharactersORMEntity
 
     public function setParameters(
         ?int    $id,
-        string $name,
-        int    $mass,
-        int    $height,
-        string $gender,
+        string  $name,
+        int     $mass,
+        int     $height,
+        string  $gender,
         ?string $picture,
         ?string $created_at,
         ?string $updated_at,
     )
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->mass = $mass;
-        $this->height = $height;
-        $this->gender = $gender;
-        $this->picture = $picture;
+        $this->id         = $id;
+        $this->name       = $name;
+        $this->mass       = $mass;
+        $this->height     = $height;
+        $this->gender     = $gender;
+        $this->picture    = $picture;
         $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"));
         $this->updated_at = $updated_at;
     }

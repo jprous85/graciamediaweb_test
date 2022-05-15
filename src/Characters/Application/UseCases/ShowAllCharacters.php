@@ -6,7 +6,7 @@ namespace App\Characters\Application\UseCases;
 
 use App\Characters\Application\Response\CharacterResponse;
 use App\Characters\Application\Response\CharacterResponses;
-use App\Characters\Domain\Characters;
+
 use App\Characters\Domain\CharactersInterface;
 
 

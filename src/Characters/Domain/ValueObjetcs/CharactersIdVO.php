@@ -6,10 +6,9 @@ namespace App\Characters\Domain\ValueObjetcs;
 
 final class CharactersIdVO
 {
-    public function __construct(
-        private ?int $id
-    )
-    {}
+    public function __construct(private ?int $id)
+    {
+    }
 
     public function value(): ?int
     {

@@ -6,6 +6,7 @@ namespace App\Characters\Application\UseCases;
 
 use App\Characters\Application\Request\CharacterIdRequest;
 use App\Characters\Application\Response\CharacterResponse;
+
 use App\Characters\Domain\Characters;
 use App\Characters\Domain\CharactersInterface;
 use App\Characters\Domain\ValueObjetcs\CharactersIdVO;
@@ -19,7 +20,7 @@ final class ShowCharacters
 
     public function __invoke(CharacterIdRequest $id_request): ?CharacterResponse
     {
-        $id_vo = new CharactersIdVO($id_request->getId());
+        $id_vo     = new CharactersIdVO($id_request->getId());
         $character = $this->repository->Show($id_vo);
 
         if ($character) {

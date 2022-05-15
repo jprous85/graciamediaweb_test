@@ -6,10 +6,9 @@ namespace App\Characters\Domain\ValueObjetcs;
 
 final class CharactersMassVO
 {
-    public function __construct(
-        private ?int $mass
-    )
-    {}
+    public function __construct(private ?int $mass)
+    {
+    }
 
     public function value(): ?int
     {

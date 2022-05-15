@@ -2,8 +2,12 @@ controllers:
     resource: ../src/Controller/
     type: annotation
 
-user:
+characters:
     resource: ../src/Characters/Infrastructure/Controller/
+    type: annotation
+
+movies:
+    resource: ../src/Movies/Infrastructure/Controller/
     type: annotation
 
 kernel:

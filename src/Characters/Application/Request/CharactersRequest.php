@@ -7,10 +7,10 @@ namespace App\Characters\Application\Request;
 final class CharactersRequest
 {
     public function __construct(
-        private ?int $id,
-        private string $name,
-        private ?int $mass,
-        private ?int $height,
+        private ?int    $id,
+        private string  $name,
+        private ?int    $mass,
+        private ?int    $height,
         private ?string $gender,
         private ?string $picture,
         private ?string $created_at,

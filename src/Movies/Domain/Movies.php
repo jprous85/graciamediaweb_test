@@ -55,7 +55,7 @@ final class Movies
     }
 
 
-    public static function create (MoviesNameVO $name)
+    public static function create(MoviesNameVO $name)
     {
         return new self(
             new MoviesIdVO(null),
@@ -65,7 +65,7 @@ final class Movies
         );
     }
 
-    public function update (MoviesNameVO $name)
+    public function update(MoviesNameVO $name)
     {
 
     }

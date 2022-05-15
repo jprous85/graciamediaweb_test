@@ -6,16 +6,17 @@ declare(strict_types=1);
 namespace App\Movies\Infrastructure\Persistence;
 
 
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 use App\Movies\Domain\Movies;
 use App\Movies\Domain\MoviesInterface;
 use App\Movies\Domain\ValueObjects\MoviesIdVO;
 use App\Movies\Domain\ValueObjects\MoviesNameVO;
 use App\Shared\Domain\ValueObjects\SharedCratedAtVO;
 use App\Shared\Domain\ValueObjects\SharedUpdatedAtVO;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ObjectManager;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class MoviesMYSQLRepository extends AbstractController implements MoviesInterface
 {
@@ -30,7 +31,7 @@ final class MoviesMYSQLRepository extends AbstractController implements MoviesIn
     public function showAll()
     {
         $entity_repository = $this->entity_manager->getRepository(MoviesORMEntity::class);
-        $orm_query = $entity_repository->findAll();
+        $orm_query         = $entity_repository->findAll();
 
         $movies_array = [];
         foreach ($orm_query as $item) {
@@ -42,7 +43,7 @@ final class MoviesMYSQLRepository extends AbstractController implements MoviesIn
     public function Show(MoviesIdVO $id_vo): Movies|null
     {
         $entity_repository = $this->entity_manager->getRepository(MoviesORMEntity::class);
-        $orm_query = $entity_repository->find($id_vo->value());
+        $orm_query         = $entity_repository->find($id_vo->value());
         return self::mapping($orm_query);
     }
 
@@ -60,13 +61,13 @@ final class MoviesMYSQLRepository extends AbstractController implements MoviesIn
         $this->entity_manager->flush();
     }
 
-    public static function mapping($request): Movies|null
+    public static function mapping(MoviesORMEntity $request): Movies|null
     {
         return $request ? new Movies(
-            new MoviesIdVO($request->id),
-            new MoviesNameVO($request->name),
-            new SharedCratedAtVO($request->created_at),
-            new SharedUpdatedAtVO($request->updated_at)
+            new MoviesIdVO($request->getId()),
+            new MoviesNameVO($request->getName()),
+            new SharedCratedAtVO($request->getCreatedAt()?->format('Y-m-d h:i')),
+            new SharedUpdatedAtVO($request->getUpdatedAt()?->format('Y-m-d h:i'))
         ) : null;
     }
 }

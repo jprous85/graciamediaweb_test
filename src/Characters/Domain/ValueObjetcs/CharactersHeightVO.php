@@ -6,10 +6,9 @@ namespace App\Characters\Domain\ValueObjetcs;
 
 final class CharactersHeightVO
 {
-    public function __construct(
-        private ?int $height
-    )
-    {}
+    public function __construct(private ?int $height)
+    {
+    }
 
     public function value(): ?int
     {

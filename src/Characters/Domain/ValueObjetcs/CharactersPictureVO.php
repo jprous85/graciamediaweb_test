@@ -6,9 +6,7 @@ namespace App\Characters\Domain\ValueObjetcs;
 
 final class CharactersPictureVO
 {
-    public function __construct(
-        private ?string $picture
-    )
+    public function __construct(private ?string $picture)
     {
     }
 
