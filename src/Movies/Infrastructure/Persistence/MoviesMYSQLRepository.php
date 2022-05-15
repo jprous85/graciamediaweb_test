@@ -54,6 +54,9 @@ final class MoviesMYSQLRepository extends AbstractController implements MoviesIn
             null,
             null
         );
+
+        $this->entity_manager->persist($movies_entity);
+        $this->entity_manager->flush();
     }
 
     public static function mapping($request): Movies|null

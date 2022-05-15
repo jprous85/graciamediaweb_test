@@ -20,6 +20,11 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Characters/Infrastructure/Persistence'
                 prefix: 'App\Characters\Infrastructure\Persistence'
                 alias: Characters
+            Movies:
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Movies/Infrastructure/Persistence'
+                prefix: 'App\Movies\Infrastructure\Persistence'
+                alias: Movies
 
 when@test:
     doctrine:

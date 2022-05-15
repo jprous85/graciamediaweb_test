@@ -46,7 +46,7 @@ final class MoviesORMEntity
     {
         $this->id         = $id;
         $this->name       = $name;
-        $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"), \DateTimeZone::EUROPE);
+        $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"));
         $this->updated_at = $updated_at;
     }
 
