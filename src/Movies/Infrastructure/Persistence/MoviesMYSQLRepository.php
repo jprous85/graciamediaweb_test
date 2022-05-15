@@ -61,7 +61,7 @@ final class MoviesMYSQLRepository extends AbstractController implements MoviesIn
         $this->entity_manager->flush();
     }
 
-    public static function mapping(MoviesORMEntity $request): Movies|null
+    public static function mapping(?MoviesORMEntity $request): Movies|null
     {
         return $request ? new Movies(
             new MoviesIdVO($request->getId()),

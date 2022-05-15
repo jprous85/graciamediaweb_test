@@ -23,11 +23,11 @@ final class ShowMovies
         $id_vo = new MoviesIdVO($id_request->getId());
         $movie = $this->repository->Show($id_vo);
 
-        if ($movie) {
-            return self::mapping($movie);
+        if (!$movie) {
+            throw new \Exception('No exist this ID');
         }
 
-        return null;
+        return self::mapping($movie);
     }
 
     public static function mapping(Movies $character): MoviesResponse

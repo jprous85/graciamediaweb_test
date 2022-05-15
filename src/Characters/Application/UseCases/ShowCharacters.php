@@ -23,11 +23,11 @@ final class ShowCharacters
         $id_vo     = new CharactersIdVO($id_request->getId());
         $character = $this->repository->Show($id_vo);
 
-        if ($character) {
-            return self::mapping($character);
+        if (!$character) {
+            throw new \Exception('No exist this ID');
         }
 
-        return null;
+        return self::mapping($character);
     }
 
     public static function mapping(Characters $character): CharacterResponse

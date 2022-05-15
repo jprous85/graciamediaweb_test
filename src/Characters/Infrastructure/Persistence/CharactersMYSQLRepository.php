@@ -70,7 +70,7 @@ final class CharactersMYSQLRepository extends AbstractController implements Char
         $this->entity_manager->flush();
     }
 
-    public static function mapping(CharactersORMEntity $request)
+    public static function mapping(?CharactersORMEntity $request)
     {
         return $request ? new Characters(
             new CharactersIdVO($request->getId()),
