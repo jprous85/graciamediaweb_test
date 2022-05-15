@@ -73,7 +73,7 @@ class CharactersORMEntity
         $this->height = $height;
         $this->gender = $gender;
         $this->picture = $picture;
-        $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"));
+        $this->created_at = $created_at ?? new \DateTime(date("Y-m-d H:i:s"), \DateTimeZone::EUROPE);
         $this->updated_at = $updated_at;
     }
 
